@@ -28,6 +28,7 @@ before_deploy:
   - gitbook epub ./ ./gopl-ch.epub
   - gitbook mobi ./ ./gopl-ch.mobi
 
+
 deploy:
   provider: releases
   api_key: $CI_USER_TOKEN
