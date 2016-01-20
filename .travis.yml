@@ -1,0 +1,44 @@
+language: node_js
+
+node_js:
+  - "stable"
+
+script:
+  - echo pass
+
+before_deploy:
+  - sudo apt-get update -qq
+  # install Chinese fonts
+  - sudo apt-get install -y fonts-arphic-gbsn00lp golang
+  # Install Gitbook
+  - npm install gitbook-cli -g
+  - npm install svgexport -g
+  - npm install gitbook-plugin-yahei
+  # Clone the repository
+  - sudo -v && wget --no-check-certificate -nv -O- https://raw.githubusercontent.com/kovidgoyal/calibre/master/setup/linux-installer.py | sudo python -c "import sys; main=lambda:sys.stderr.write('Download failed\n'); exec(sys.stdin.read()); main()"
+
+  - sudo cp tools/*.ttc /usr/share/fonts/truetype
+
+  - go run zh2tw.go . .md$ tw2zh
+
+  - gitbook install
+  - gitbook build ./ --format=json
+  - gitbook build ./
+  - gitbook pdf ./ ./gopl-ch.pdf
+  - gitbook epub ./ ./gopl-ch.epub
+  - gitbook mobi ./ ./gopl-ch.mobi
+
+
+deploy:
+  provider: releases
+  api_key: $CI_USER_TOKEN
+  skip_cleanup: true
+  file:
+    - gopl-ch.pdf
+    - gopl-ch.epub
+    - gopl-ch.mobi
+  on:
+    tags: true
+    all_branches: true
+
+
