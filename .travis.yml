@@ -19,6 +19,7 @@ before_deploy:
 
   - sudo cp tools/*.ttc /usr/share/fonts/truetype
 
+  - go run update_version.go
   - go run zh2tw.go . .md$ tw2zh
 
   - gitbook install
