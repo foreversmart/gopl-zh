@@ -2,7 +2,7 @@
 
 Go語言聖經 [《The Go Programming Language》](http://gopl.io) 中文版本，僅供學習交流之用。
 
-[![](cover_middle.jpg)](https://github.com/golang-china/gopl-zh)
+[![](cover_middle.jpg)](http://golang-china.github.io/gopl-zh)
 
 - 在線版本：http://golang-china.github.io/gopl-zh
 - 離線版本：http://github.com/golang-china/gopl-zh/archive/gh-pages.zip
@@ -14,9 +14,9 @@ Go語言聖經 [《The Go Programming Language》](http://gopl.io) 中文版本�
 
 先安裝NodeJS和GitBook命令行工具(`npm install gitbook-cli -g`命令)。
 
-1. 下載 https://github.com/golang-china/gopl-zh/archive/master.zip ，獲取源文件。
+1. 運行`go get github.com/golang-china/gopl-zh`，獲取 [源文件](https://github.com/golang-china/gopl-zh/archive/master.zip)。
 2. 切換到 `gopl-zh` 目録，運行 `gitbook install`，安裝GitBook插件。
-3. 運行`gitbook build`，生成`_book`目録。
+3. 運行`make`，生成`_book`目録。
 4. 打開`_book/index.html`文件。
 
 ### 簡體/繁體轉換
@@ -25,10 +25,6 @@ Go語言聖經 [《The Go Programming Language》](http://gopl.io) 中文版本�
 
 - `make zh2tw` 或 `go run zh2tw.go . "\.md$" zh2tw`，轉繁體。
 - `make tw2zh` 或 `go run zh2tw.go . "\.md$" tw2zh`，轉簡體。
-
-### Markdown 格式預覽
-
-- [SUMMARY-github.md](SUMMARY-github.md)
 
 # 版權聲明
 

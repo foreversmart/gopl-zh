@@ -42,7 +42,13 @@
 **p.79, ¶4:** "When an untyped constant is assigned to a variable, as in the first statement below, or
 appears on the right-hand side of a variable declaration with an explicit type, as in the other three statements, ..." has it backwards: the <i>first</i> statement is a declaration; the other three are assignments. (Thanks to Yoshiki Shibata, 2015-11-09. Corrected in the third printing.)
 
+**p.112:** Exercise 4.11 calls for a "CRUD" (create, read, update, delete) tool for GitHub Issues. Since GitHub does not currently allow Issues to be deleted, for "delete", read "close". (Thanks to Yoshiki Shibata, 2016-01-18.)
+
+**p.115:** The anchor element in `gopl.io/ch4/issueshtml`'s template is missing a closing `</a>` tag. (Thanks to Taj Khattra, 2016-01-19.)
+
 **p.132, code display following ¶3:** the final comment should read: `// compile error: can't assign func(int, int) int to func(int) int` (Thanks to Toni Suter, 2015-11-21. Corrected in the third printing.)
+
+**p.160, ¶4:** `For Get("item"))`, read `Get("item")`. (Thanks to Yoshiki Shibata, 2016-02-01.)
 
 **p.166, ¶2:** for "way", read "a way". (Corrected in the third printing.)
 
@@ -50,10 +56,10 @@ appears on the right-hand side of a variable declaration with an explicit type, 
 
 **p.222, Exercise 8.1:** The port numbers for `London` and `Tokyo` should be swapped in the final command to match the earlier commands. (Thanks to Kiyoshi Kamishima, 2016-01-08.)
 
-**p.272, ¶3:** for "the request body", read "the response body". (Thanks to 曹春晖, 2016-01-19.)
+**p.272, ¶3:** for "the request body", read "the response body". (Thanks to [曹春晖](https://github.com/cch123), 2016-01-19.)
 
 **p.288, code display following ¶4:** In the import declaration, for `"database/mysql"`, read `"database/sql"`. (Thanks to Jose Colon Rodriguez, 2016-01-09.)
 
-**p.347, Exercise 12.8:** for "like json.Marshal", read "like json.Unmarshal". (Thanks to chai2010, 2016-01-01.)
+**p.347, Exercise 12.8:** for "like json.Marshal", read "like json.Unmarshal". (Thanks to [chai2010](https://github.com/chai2010), 2016-01-01.)
 
 **p.362:** the `gopl.io/ch13/bzip` program does not comply with the [proposed rules for passing pointers between Go and C code](https://github.com/golang/proposal/blob/master/design/12416-cgo-pointers.md) because the C function `bz2compress` temporarily stores a Go pointer (in) into the Go heap (the `bz_stream` variable). The `bz_stream` variable should be allocated, and explicitly freed after the call to `BZ2_bzCompressEnd`, by C functions. (Thanks to Joe Tsai, 2015-11-18. Corrected in the third printing.)

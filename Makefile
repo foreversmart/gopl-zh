@@ -13,7 +13,9 @@
 # http://www.imagemagick.org/
 
 default:
+	go run update_version.go
 	gitbook build
+	go run fix-data-revision.go
 
 zh2tw:
 	go run zh2tw.go . .md$$
@@ -26,15 +28,14 @@ loop:
 	go run zh2tw.go . .md$$ zh2tw
 
 review:
+	go run update_version.go
 	go run zh2tw.go . .md$$ tw2zh
 	gitbook build
 	go run zh2tw.go . .md$$ zh2tw
+	go run fix-data-revision.go
 
 qrcode:
-	go run mkqrcode.go
-
-fixlink:
-	go run fixlinks.go . .md$$
+	go run ./tools/mkqrcode.go
 
 cover:
 	composite  cover_patch.png cover_bgd.png cover.jpg
@@ -47,4 +48,3 @@ cover:
 	convert    -strip       cover.jpg        cover.jpg
 	convert    -strip       cover_small.jpg  cover_small.jpg
 	convert    -strip       cover_middle.jpg cover_middle.jpg
-

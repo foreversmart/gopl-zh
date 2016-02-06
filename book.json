@@ -1,13 +1,32 @@
 {
-	"gitbook": "2.x.x",
-	"title": "Go语言圣经",
-	"description": "<The Go Programming Language>中文版",
-	"language": "zh",
-	"structure": {
-		"readme": "preface.md"
-	},
-	"plugins": [
-		"katex",
-		"-search"
-	]
+  "gitbook": "2.x.x",
+  "title": "Go语言圣经",
+  "description": "<The Go Programming Language>中文版",
+  "language": "zh",
+  "structure": {
+    "readme": "preface.md"
+  },
+  "pluginsConfig": {
+    "fontSettings": {
+      "theme": "white",
+      "family": "msyh",
+      "size": 2
+    },
+    "plugins": [
+      "yahei",
+      "katex",
+      "-search"
+    ]
+  },
+  "pdf": {
+    "pageNumbers": true,
+    "fontSize": 18,
+    "paperSize": "a4",
+    "margin": {
+      "right": 30,
+      "left": 30,
+      "top": 30,
+      "bottom": 50
+    }
+  }
 }
